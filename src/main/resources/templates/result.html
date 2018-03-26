@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Result</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<div>
+		<table border="1">
+			<tr>
+				<th>Album Image</th>
+				<th>Artist Name</th>
+				<th>Album Name</th>
+				<th>Track Name</th>
+			</tr>
+			<tr th:each="track : ${trackModelList}">
+				<td><img th:src=${track.albumImageUrl} width="200px" height="200px"></td>
+				<td th:utext=${track.artistName}>...</td>
+				<td th:utext="${track.albumName}">...</td>
+				<td th:utext="${track.trackName}">...</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
